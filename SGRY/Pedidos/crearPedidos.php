@@ -11,24 +11,57 @@ include("../SGRY.php");
     <title>Registro</title>
 </head>
 <body>
-    <h1> Bienvenido<br> Haga su pedido! </h1>
+    <div class="header-yupi">
+        <img src="../Imagenes/Logo_YUPI.webp" alt="Logo empresa" />
+        <div class="header-text">
+        Sistema Gestor de Rutas YUPI
+        </div>
+    </div>
 
-    <form action ="crearPedidos.php" method ="post">  
-        <label> Id Cliente: </label><br>
-        <input type="text" name="usuario" required><br><br>
+    <div class="center-box">
+        <h1> Bienvenido<br> Haga su pedido! </h1><br>
 
-        <label> Id Producto: </label><br>
-        <input type="decimal" name="producto" required><br><br>
+        <form action ="crearPedidos.php" method ="post">  
+            <label> Id Cliente: </label><br>
+            <input type="text" name="usuario" required><br><br>
 
-        <label> Cantidad: </label><br>
-        <input type="decimal" name="cantidad" required><br><br>
+            <label> Id Producto: </label><br>
+            <input type="decimal" name="producto" required><br><br>
 
-        <input type="submit" value="Finalizar Pedido">
+            <label> Cantidad: </label><br>
+            <input type="decimal" name="cantidad" required><br><br>
 
-    </form>
+            <input type="submit" value="Finalizar Pedido">
 
+        </form>
+    </div>
+
+    <div class="footer-yupi">
+        <div class="footer-text">
+        Bases de datos -- 2025 <br><br>
+        Carlos Alberto Ocampo Sepulveda
+        </div>
+
+        <div class="footer-carousel">
+        <img id="carousel-img" src="../Imagenes/golpe-bbq.png" alt="Imagen 1">
+        </div>
+    </div>
+
+    <script>
+    const images = ['../Imagenes/golpe-bbq.png', '../Imagenes/golpe-ranchero.png', '../Imagenes/rizadas-pollo.png', 
+    '../Imagenes/rizadas-tomate.png', '../Imagenes/tosti-arepa.png', '../Imagenes/tosti-empanada-limon.png', 
+    '../Imagenes/tosti-nachos-bbq.png', '../Imagenes/yupi_salado-1.png', '../Imagenes/yupis_queso_horneados01_50g.png', '../Imagenes/copelia-panelitas.png']; // Rutas de tus imágenes
+    let idx = 0;
+    setInterval(() => {
+    idx = (idx + 1) % images.length;
+    document.getElementById('carousel-img').src = images[idx];
+    }, 2300); // Cambia cada 2.3 segundos
+    </script>
 </body>
+
 </html>
+
+
 
 <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") { # Se ejecuta solo cuando se le da al boton

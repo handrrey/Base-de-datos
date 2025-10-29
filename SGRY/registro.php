@@ -7,10 +7,41 @@
     <title>Registro</title>
 </head>
 <body>
+  <div class="header-yupi">
+    <img src="Imagenes/Logo_YUPI.webp" alt="Logo empresa" />
+    <div class="header-text">
+      Sistema Gestor de Rutas YUPI
+    </div>
+  </div>
+
+  <div class="center-box">
     <h1>Como se desea registrar</h1>
 
-    <button onclick="location.href='Proveedores/registroProveedor.php'"> Proveedor </button><br><br>
-    <button onclick="location.href='Clientes/registroClientes.php'"> Cliente </button><br><br>
-    
+    <button onclick="location.href='Proveedores/registroProveedor.php'"> Proveedor </button><br>
+    <button onclick="location.href='Clientes/registroClientes.php'"> Cliente </button>
+  </div>
+
+  <div class="footer-yupi">
+    <div class="footer-text">
+      Bases de datos -- 2025 <br><br>
+      Carlos Alberto Ocampo Sepulveda
+    </div>
+
+    <div class="footer-carousel">
+      <img id="carousel-img" src="Imagenes/golpe-bbq.png" alt="Imagen 1">
+    </div>
+  </div>
+
+  <script>
+  const images = ['Imagenes/golpe-bbq.png', 'Imagenes/golpe-ranchero.png', 'Imagenes/rizadas-pollo.png', 
+  'Imagenes/rizadas-tomate.png', 'Imagenes/tosti-arepa.png', 'Imagenes/tosti-empanada-limon.png', 
+  'Imagenes/tosti-nachos-bbq.png', 'Imagenes/yupi_salado-1.png', 'Imagenes/yupis_queso_horneados01_50g.png', 'Imagenes/copelia-panelitas.png']; // Rutas de tus imágenes
+  let idx = 0;
+  setInterval(() => {
+      idx = (idx + 1) % images.length;
+      document.getElementById('carousel-img').src = images[idx];
+  }, 2300); // Cambia cada 2.3 segundos
+  </script>
 </body>
+
 </html>

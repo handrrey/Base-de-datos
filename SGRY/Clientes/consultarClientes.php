@@ -23,30 +23,63 @@ $resultado = mysqli_query($conexion, $query);
     <title>Consultar Clientes</title>
 </head>
 <body>
-    <form method="POST">
-        <label>Busqueda individual:</label><br>
-        <input type="text" name="busqueda" placeholder="Buscar cliente" value="<?php echo htmlspecialchars($busqueda); ?>">
-        <button type="submit" name="buscar">Buscar</button>
-    </form>
+    <div class="header-yupi">
+        <img src="../Imagenes/Logo_YUPI.webp" alt="Logo empresa" />
+        <div class="header-text">
+        Sistema Gestor de Rutas YUPI
+        </div>
+    </div>
 
-    <table border="1">
-        <tr><th>ID</th> 
-            <th>NOMBRE</th>
-            <th>ZONA</th>
-            <th>DIRECCION</th>
-            <th>ID PROVEEDOR</th>
-            <th>CELULAR</th>
-        </tr>
-        <?php while ($fila = mysqli_fetch_assoc($resultado)): ?>
-            <tr>
-                <td><?php echo $fila['CEDULA']; ?></td>
-                <td><?php echo $fila['NOMBRE_CLIE']; ?></td>
-                <td><?php echo $fila['ZONA']; ?></td>
-                <td><?php echo $fila['DIRECCION']; ?></td>
-                <td><?php echo $fila['ID_PROVEEDOR']; ?></td>
-                <td><?php echo $fila['NUM_CELULAR']; ?></td>
+    <div class="center-box">
+        <form method="POST">
+            <label>Busqueda individual:</label><br><br>
+            <input type="text" name="busqueda" placeholder="Buscar cliente.." value="<?php echo htmlspecialchars($busqueda); ?>">
+            <button type="submit" name="buscar">Buscar</button>
+        </form>
+
+        <table border="1">
+            <tr><th>ID</th> 
+                <th>NOMBRE</th>
+                <th>ZONA</th>
+                <th>DIRECCION</th>
+                <th>ID PROVEEDOR</th>
+                <th>CELULAR</th>
             </tr>
-        <?php endwhile; ?>
-    </table>
+            <?php while ($fila = mysqli_fetch_assoc($resultado)): ?>
+                <tr>
+                    <td><?php echo $fila['CEDULA']; ?></td>
+                    <td><?php echo $fila['NOMBRE_CLIE']; ?></td>
+                    <td><?php echo $fila['ZONA']; ?></td>
+                    <td><?php echo $fila['DIRECCION']; ?></td>
+                    <td><?php echo $fila['ID_PROVEEDOR']; ?></td>
+                    <td><?php echo $fila['NUM_CELULAR']; ?></td>
+                </tr>
+            <?php endwhile; ?>
+        </table>
+    </div>
+
+    <div class="footer-yupi">
+        <div class="footer-text">
+        Bases de datos -- 2025 <br><br>
+        Carlos Alberto Ocampo Sepulveda
+        </div>
+
+        <div class="footer-carousel">
+        <img id="carousel-img" src="../Imagenes/golpe-bbq.png" alt="Imagen 1">
+        </div>
+    </div>
+
+    <script>
+    const images = ['../Imagenes/golpe-bbq.png', '../Imagenes/golpe-ranchero.png', '../Imagenes/rizadas-pollo.png', 
+    '../Imagenes/rizadas-tomate.png', '../Imagenes/tosti-arepa.png', '../Imagenes/tosti-empanada-limon.png', 
+    '../Imagenes/tosti-nachos-bbq.png', '../Imagenes/yupi_salado-1.png', '../Imagenes/yupis_queso_horneados01_50g.png', '../Imagenes/copelia-panelitas.png']; // Rutas de tus imágenes
+    let idx = 0;
+    setInterval(() => {
+    idx = (idx + 1) % images.length;
+    document.getElementById('carousel-img').src = images[idx];
+    }, 2300); // Cambia cada 2.3 segundos
+    </script>
 </body>
+
 </html>
+

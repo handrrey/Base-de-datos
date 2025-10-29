@@ -11,33 +11,66 @@ include("../SGRY.php");
     <title>Registro de Productos</title>
 </head>
 <body>
-    <h1> Bienvenido<br> Ingrese los datos del producto </h1>
+    <div class="header-yupi">
+        <img src="../Imagenes/Logo_YUPI.webp" alt="Logo empresa" />
+        <div class="header-text">
+        Sistema Gestor de Rutas YUPI
+        </div>
+    </div>
 
-    <form action ="registrarProductos.php" method ="post">  
-        <label> Marca: </label><br>
-        <input type="text" name="marca" required><br><br>
+    <div class="center-box">
+        <h1> Bienvenido<br> Ingrese los datos del producto </h1>
 
-        <label> Sabor: </label><br>
-        <input type="text" name="sabor" required><br><br>
+        <form action ="registrarProductos.php" method ="post">  
+            <label> Marca: </label><br>
+            <input type="text" name="marca" required><br>
 
-        <label> Descripcion: </label><br>
-        <input type="text" name="descripcion" ><br><br>
+            <label> Sabor: </label><br>
+            <input type="text" name="sabor" required><br>
 
-        <label> Cantidad disponible: </label><br>
-        <input type="decimal" name="cantidad_disp" required><br><br>
+            <label> Descripcion: </label><br>
+            <input type="text" name="descripcion" ><br>
 
-        <label> Fecha de Vencimiento: </label><br>
-        <input type="date" name="fecha_venc" required><br><br>
+            <label> Cantidad disponible: </label><br>
+            <input type="decimal" name="cantidad_disp" required><br>
 
-        <label> Precio Unidad: </label><br>
-        <input type="decimal" name="precio" required><br><br>
+            <label> Fecha de Vencimiento: </label><br>
+            <input type="date" name="fecha_venc" required><br>
 
-        <input type="submit" value="Registrar Producto">
+            <label> Precio Unidad: </label><br>
+            <input type="decimal" name="precio" required><br>
 
-    </form>
+            <input type="submit" value="Registrar Producto">
 
+        </form>
+    </div>
+
+    <div class="footer-yupi">
+        <div class="footer-text">
+        Bases de datos -- 2025 <br><br>
+        Carlos Alberto Ocampo Sepulveda
+        </div>
+
+        <div class="footer-carousel">
+        <img id="carousel-img" src="../Imagenes/golpe-bbq.png" alt="Imagen 1">
+        </div>
+    </div>
+
+    <script>
+    const images = ['../Imagenes/golpe-bbq.png', '../Imagenes/golpe-ranchero.png', '../Imagenes/rizadas-pollo.png', 
+    '../Imagenes/rizadas-tomate.png', '../Imagenes/tosti-arepa.png', '../Imagenes/tosti-empanada-limon.png', 
+    '../Imagenes/tosti-nachos-bbq.png', '../Imagenes/yupi_salado-1.png', '../Imagenes/yupis_queso_horneados01_50g.png', '../Imagenes/copelia-panelitas.png']; // Rutas de tus imágenes
+    let idx = 0;
+    setInterval(() => {
+    idx = (idx + 1) % images.length;
+    document.getElementById('carousel-img').src = images[idx];
+    }, 2300); // Cambia cada 2.3 segundos
+    </script>
 </body>
+
 </html>
+
+
 
 <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") { # Se ejecuta solo cuando se le da al boton

@@ -11,29 +11,60 @@ include("../SGRY.php");
     <title>Registro</title>
 </head>
 <body>
-    <h1> Bienvenido a registro de Clientes <br> Ingrese las credenciales de registro </h1>
+    <div class="header-yupi">
+        <img src="../Imagenes/Logo_YUPI.webp" alt="Logo empresa" />
+        <div class="header-text">
+        Sistema Gestor de Rutas YUPI
+        </div>
+    </div>
 
-    <form action ="registroClientes.php" method ="post">  
-        <label> Nombre: </label><br>
-        <input type="text" name="usuario" required><br><br>
+    <div class="center-box">
+        <h1> Bienvenido a registro de Clientes <br> Ingrese las credenciales de registro </h1>
 
-        <label> Contraseña: </label><br>
-        <input type="password" name="contraseña" required><br><br>
+        <form action ="registroClientes.php" method ="post">  
+            <label> Nombre: </label><br>
+            <input type="text" name="usuario" required><br><br>
 
-        <label> Zona: </label><br>
-        <input type="text" name="zona" required><br><br>
+            <label> Contraseña: </label><br>
+            <input type="password" name="contraseña" required><br><br>
 
-        <label> Direccion: </label><br>
-        <input type="text" name="direccion" required><br><br>
+            <label> Zona: </label><br>
+            <input type="text" name="zona" required><br><br>
 
-        <label> Celular: </label><br>
-        <input type="decimal" name="celular" required><br><br>
+            <label> Direccion: </label><br>
+            <input type="text" name="direccion" required><br><br>
 
-        <input type="submit" value="Ingresar">
+            <label> Celular: </label><br>
+            <input type="number" name="celular" required><br><br>
 
-    </form>
+            <input type="submit" value="Ingresar">
 
+        </form>
+    </div>
+
+    <div class="footer-yupi">
+        <div class="footer-text">
+        Bases de datos -- 2025 <br><br>
+        Carlos Alberto Ocampo Sepulveda
+        </div>
+
+        <div class="footer-carousel">
+        <img id="carousel-img" src="../Imagenes/golpe-bbq.png" alt="Imagen 1">
+        </div>
+    </div>
+
+    <script>
+    const images = ['../Imagenes/golpe-bbq.png', '../Imagenes/golpe-ranchero.png', '../Imagenes/rizadas-pollo.png', 
+    '../Imagenes/rizadas-tomate.png', '../Imagenes/tosti-arepa.png', '../Imagenes/tosti-empanada-limon.png', 
+    '../Imagenes/tosti-nachos-bbq.png', '../Imagenes/yupi_salado-1.png', '../Imagenes/yupis_queso_horneados01_50g.png', '../Imagenes/copelia-panelitas.png']; // Rutas de tus imágenes
+    let idx = 0;
+    setInterval(() => {
+    idx = (idx + 1) % images.length;
+    document.getElementById('carousel-img').src = images[idx];
+    }, 2300); // Cambia cada 2.3 segundos
+    </script>
 </body>
+
 </html>
 
 <?php
