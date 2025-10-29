@@ -88,7 +88,7 @@
         </form>
 
     </div>
-
+    <a href="../Proveedores/menuProveedor.php" class="btn-yupi">Volver al menú</a>
 
     <div class="footer-yupi">
         <div class="footer-text">

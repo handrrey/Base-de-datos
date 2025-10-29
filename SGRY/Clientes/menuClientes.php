@@ -20,6 +20,8 @@
         <button onclick="location.href='../Pedidos/consultarPedidos.php'"> Consultar Pedidos </button>
         <button onclick="location.href='../Productos/consultarProductos.php'"> Consultar Productos </button>
     </div>
+    
+    <a href="../entrada.php" class="btn-yupi">Cerrar sesión</a>
 
     <div class="footer-yupi">
         <div class="footer-text">

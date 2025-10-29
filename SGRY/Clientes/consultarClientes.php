@@ -56,6 +56,8 @@ $resultado = mysqli_query($conexion, $query);
                 </tr>
             <?php endwhile; ?>
         </table>
+
+        <a href="../Proveedores/menuProveedor.php" class="btn-yupi">Volver al menú</a>
     </div>
 
     <div class="footer-yupi">

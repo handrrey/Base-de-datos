@@ -26,7 +26,7 @@ include("SGRY.php");
         <input type="text" name="usuario" required><br><br>
 
         <label> Contraseña: </label><br>
-        <input type="pasword" name="contraseña" required><br><br>
+        <input type="password" name="contraseña" required><br><br>
 
         <label> Tipo de Usuario: </label><br>
         <select name="tipo_user" required>  
@@ -81,6 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { # Se ejecuta solo cuando se le da al
         }
 
         if ($resultado["CONTRASEÑA"] == $contraseña) {
+          $_SESSION['tipo_user'] = "proveedor";
             echo "<meta http-equiv='refresh' content='1;url=Proveedores/menuProveedor.php'> ";
         }
         else {
@@ -88,6 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { # Se ejecuta solo cuando se le da al
         }
     }
 
+    
     # Verificación existencia correcta de datos de clientes
     if($_POST["tipo_user"] == "clientes"){
         $query = "SELECT * FROM clientes WHERE NOMBRE_CLIE = '$usuario' ";
@@ -99,6 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { # Se ejecuta solo cuando se le da al
         }
 
         if ($resultado["CONTRASEÑA"] == $contraseña) {
+           $_SESSION['tipo_user'] = "cliente";
             echo "<meta http-equiv='refresh' content='1;url=Clientes/menuClientes.php'> ";
         }
         else {

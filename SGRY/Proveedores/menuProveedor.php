@@ -24,6 +24,8 @@
         <button onclick="location.href='../Reportes/Agotados.php'"> Reporte de productos Agotados </button>
     </div>
 
+    <a href="../entrada.php" class="btn-yupi">Cerrar sesión</a>
+
     <div class="footer-yupi">
         <div class="footer-text">
         Bases de datos -- 2025 <br>
@@ -33,6 +35,7 @@
         <div class="footer-carousel">
         <img id="carousel-img" src="../Imagenes/golpe-bbq.png" alt="Imagen 1">
         </div>
+
   </div>
 
     <script>
@@ -45,6 +48,8 @@
     document.getElementById('carousel-img').src = images[idx];
     }, 2300); // Cambia cada 2.3 segundos
     </script>
+
+
 </body>
 
 </html>
