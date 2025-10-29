@@ -20,6 +20,8 @@
         <button onclick="location.href='../Productos/registrarProductos.php'"> Registrar Productos </button>
         <button onclick="location.href='../Productos/consultarProductos.php'"> Consultar Productos </button>
         <button onclick="location.href='../Pedidos/consultarPedidos.php'"> Consultar Pedidos </button>
+        <button onclick="location.href='../Reportes/Vencimiento.php'"> Reporte de Vencimientos </button>
+        <button onclick="location.href='../Reportes/Agotados.php'"> Reporte de productos Agotados </button>
     </div>
 
     <div class="footer-yupi">
